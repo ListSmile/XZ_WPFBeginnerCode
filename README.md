@@ -1,0 +1,2 @@
+# XZ_WPFBeginnerCode
+从Winform转到WPF的开始方案，主要是转换技术栈为主
