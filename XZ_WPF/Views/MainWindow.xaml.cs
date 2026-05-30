@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using XZ_WPF.ViewModels;
 
 namespace XZ_WPF
 {
@@ -19,6 +20,7 @@ namespace XZ_WPF
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModels();
         }
     }
 }

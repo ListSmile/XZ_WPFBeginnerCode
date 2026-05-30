@@ -10,10 +10,8 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Views\" />
-    <Folder Include="ViewModels\" />
-    <Folder Include="Common\" />
     <Folder Include="Services\" />
+    <Folder Include="Common\" />
     <Folder Include="Core\" />
   </ItemGroup>
 
@@ -26,6 +24,7 @@
     <PackageReference Include="NModbus" Version="3.0.83" />
     <PackageReference Include="OxyPlot.Wpf" Version="2.2.0" />
     <PackageReference Include="Prism.Core" Version="9.0.537" />
+    <PackageReference Include="Prism.Wpf" Version="9.0.537" />
     <PackageReference Include="Serilog" Version="4.3.1" />
     <PackageReference Include="SqlSugarCore" Version="5.1.4.214" />
   </ItemGroup>
