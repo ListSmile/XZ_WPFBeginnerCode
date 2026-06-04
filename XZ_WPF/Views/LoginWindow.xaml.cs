@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using XZ_WPF.ViewModels;
 
 namespace XZ_WPF.Views
 {
@@ -22,22 +24,7 @@ namespace XZ_WPF.Views
         public LoginWindow()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            string userstr = this.txt_user.Text;
-            string passstr = this.txt_pwd.Password;
-            if (userstr == "admin" && passstr == "123456")
-            {
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                this.Close();
-            }
-            else 
-            {
-                MessageBox.Show("用户名或密码错误！");
-            }
+            DataContext = new LoginWindowViewModel();
         }
     }
 }

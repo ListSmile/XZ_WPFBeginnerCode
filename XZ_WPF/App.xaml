@@ -8,6 +8,8 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/XZ_WPF;component/BaseButtonStyle.xaml" />
+                <ResourceDictionary Source="/XZ_WPF;component/XZButton.xaml" />
+                <ResourceDictionary Source="/XZ_WPF;component/XZTextBox.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

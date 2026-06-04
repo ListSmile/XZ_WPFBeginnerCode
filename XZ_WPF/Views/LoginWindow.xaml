@@ -4,7 +4,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:XZ_WPF.Views"
+    xmlns:local_pwd="clr-namespace:XZ_WPF.Common"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xzbtn="clr-namespace:XZ_WPF"
+    Name="LoginView"
     Title="LoginWindow"
     Width="800"
     Height="450"
@@ -19,7 +22,7 @@
             Grid.Row="0"
             Margin="5"
             HorizontalAlignment="Center"
-            FontFamily="Arial Black"
+            FontFamily="Arial"
             FontSize="26"
             Foreground="Blue"
             Text="XZ-数据资源管理系统" />
@@ -52,11 +55,11 @@
                 VerticalAlignment="Center"
                 FontSize="16"
                 Text="用户名：" />
-            <TextBox
-                x:Name="txt_user"
+            <xzbtn:XZTextBox
                 Grid.Row="0"
                 Grid.Column="1"
-                Margin="5" />
+                Margin="5"
+                Text="{Binding UserName}" />
             <TextBlock
                 Grid.Row="1"
                 Grid.Column="0"
@@ -65,24 +68,28 @@
                 FontSize="16"
                 Text="密码：" />
             <PasswordBox
-                x:Name="txt_pwd"
                 Grid.Row="1"
                 Grid.Column="1"
-                Margin="5" />
+                Margin="5"
+                local_pwd:PassWordHelper.Attach="True"
+                local_pwd:PassWordHelper.XZPassWord="{Binding PassWord, Mode=TwoWay}" />
             <CheckBox
                 Grid.Row="2"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
                 Margin="5"
                 Content="记住密码" />
-            <Button
+            <xzbtn:XZButton
                 Grid.Row="3"
                 Grid.Column="1"
                 Width="190"
                 Margin="5"
                 HorizontalAlignment="Center"
-                Click="Button_Click"
-                Content="登录" />
+                BackGroundHover="Red"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=LoginView}"
+                Content="登录"
+                XZCornerRadius="10" />
         </Grid>
     </Grid>
 </Window>
